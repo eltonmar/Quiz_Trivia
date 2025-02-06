@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the name of the famous ancient wall built to protect China from invaders ?",
+      "options": ["The Great Wall", "The Ming Wall", "The Dragon Wall", "The Stone Wall"],
+      "correctAnswer": "The Great Wall",
+      "explanation": "The Great Wall of China is one of the most iconic structures in the world, stretching over 13,000 miles! It was built over centuries, starting as early as the 7th century BC, to protect China from invasions. While it’s often said to be visible from space, that’s actually a myth—but it’s still an incredible feat of ancient engineering!",
+      "points": 10
+    },
+    {
+      "id": 2,
+      "question": "Which dynasty is known for creating the Terracotta Army?",
+      "options": ["Ming Dynasty", "Qin Dynasty", "Han Dynasty", "Tang Dynasty"],
+      "correctAnswer": "Qin Dynasty",
+      "explanation": "The Terracotta Army was built during the Qin Dynasty (221-206 BCE) under Emperor Qin Shi Huang, the first emperor of unified China. This incredible army of over 8,000 soldiers, 130 chariots, and 670 horses was created to protect the emperor in the afterlife.",
+      "points": 10
+    },
+    {
+      "id": 3,
+      "question": "What was the name of the last dynasty to rule China before it became a republic in 1912?",
+      "options": ["Ming Dynasty", "Yuan Dynasty", "Qing Dynasty", "Song Dynasty"],
+      "correctAnswer": "Qing Dynasty",
+      "explanation": "The Qing Dynasty (1644–1912) was the last imperial dynasty of China. It was founded by the Manchu people and expanded China’s borders to their greatest extent. However, internal rebellions and foreign pressures eventually led to its downfall, and China became a republic in 1912.",
+      "points": 10
+    },
+    {
+      "id": 4,
+      "question": "What is the name of the ancient trade route that connected China to Europe and the Middle East?",
+      "options": ["Spice Route", "Silk Road", "Tea Trail", "Jade Path"],
+      "correctAnswer": "Silk Road",
+      "explanation": "The Silk Road was an ancient network of trade routes connecting China to Europe, the Middle East, and beyond. It wasn’t just for silk—spices, gold, ideas, and even technologies like papermaking traveled along these routes. The Silk Road played a huge role in cultural exchange and shaping the world as we know it today!",
+      "points": 10
+    },
+    {
+      "id": 5,
+      "question": "What is the name of the famous Chinese explorer who led voyages to Southeast Asia, South Asia, and East Africa in the 15th century?",
+      "options": ["Marco Polo", "Zheng He", "Kublai Khan", "Sun Tzu"],
+      "correctAnswer": "Zheng He",
+      "explanation": "Zheng He was a famous Chinese explorer during the Ming Dynasty (15th century). He led seven major voyages with a massive fleet of ships, traveling as far as Africa and the Middle East. His expeditions were meant to showcase China’s power and establish trade relationships, making him one of history’s greatest explorers.",
+      "points": 10
+    },
+    {
+      "id": 6,
+      "question": "\u2605 BONUS QUESTION \u2605\nWhat is the traditional Chinese New Year animal for 2023?",
+      "options": ["Dragon", "Rabbit", "Snake", "Tiger"],
+      "correctAnswer": "Snake",
+      "explanation": "2023 was the Year of the Snake in the Chinese zodiac! The snake is the sixth animal in the Chinese zodiac cycle and represents wisdom and charm. This bonus question was worth double points (20 points) because it tests your knowledge of modern Chinese culture and traditions!",
+      "points": 20
+    }
+  ]
+}
