@@ -1,8 +1,42 @@
-# React + Vite
+# Chinese History Quiz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive quiz game about Chinese history with beautiful animations and a traditional Chinese design theme.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Interactive quiz questions about Chinese history
+- Beautiful Chinese-inspired design
+- Bonus questions for extra points
+- Detailed explanations for each answer
+- High scores leaderboard
+- Responsive design
+
+## Technologies Used
+
+- React
+- Vite
+- CSS Animations
+- Local Storage for high scores
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open http://localhost:5173 in your browser
+
+## Building for Production
+
+```bash
+npm run build
+```
+
+## License
+
+MIT License

@@ -104,11 +104,11 @@ body::after {
 }
 
 @keyframes fadeIn {
-  from {
+  0% {
     opacity: 0;
     transform: translateY(20px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -167,7 +167,7 @@ h1 {
 
 h1::before,
 h1::after {
-  content: "🏮";
+  content: '🏮';
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -185,11 +185,14 @@ h1::after {
 }
 
 @keyframes swing {
-  0%, 100% {
+  0% {
     transform: translateY(-50%) rotate(0deg);
   }
   50% {
     transform: translateY(-50%) rotate(10deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(0deg);
   }
 }
 
@@ -380,53 +383,130 @@ button:hover {
 }
 
 .high-scores {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  border-radius: 15px;
+  padding: 2rem;
   margin-top: 2rem;
-  text-align: left;
-  width: 100%;
-  max-width: 500px;
-  background-color: var(--paper-white);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid var(--chinese-red);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--chinese-gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.high-scores::before {
+  content: '🏆';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 3rem;
+  opacity: 0.2;
+  transform: rotate(15deg);
 }
 
 .high-scores-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid var(--chinese-red);
-  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(196, 30, 58, 0.2);
+  padding-bottom: 1rem;
 }
 
 .high-scores h2 {
   color: var(--chinese-red);
-  font-size: 1.5rem;
   margin: 0;
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .clear-scores-btn {
-  background-color: #dc3545;
-  font-size: 0.9rem;
+  background: linear-gradient(45deg, #ff6b6b, #ff8787);
+  color: white;
+  border: none;
   padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .clear-scores-btn:hover {
-  background-color: #bb2d3b;
+  background: linear-gradient(45deg, #ff5252, #ff6b6b);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .high-scores ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .high-scores li {
-  padding: 0.8rem;
-  border-bottom: 1px solid rgba(196, 30, 58, 0.2);
-  color: var(--chinese-black);
-  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
   margin-bottom: 0.5rem;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--chinese-gold);
+}
+
+.high-scores li:hover {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.high-scores li:nth-child(1) {
+  background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+  border-left: 4px solid #ffd700;
+}
+
+.high-scores li:nth-child(2) {
+  background: linear-gradient(45deg, rgba(192, 192, 192, 0.2), rgba(192, 192, 192, 0.1));
+  border-left: 4px solid #c0c0c0;
+}
+
+.high-scores li:nth-child(3) {
+  background: linear-gradient(45deg, rgba(205, 127, 50, 0.2), rgba(205, 127, 50, 0.1));
+  border-left: 4px solid #cd7f32;
+}
+
+.score-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.score-rank {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--chinese-red);
+  min-width: 30px;
+}
+
+.score-details {
+  flex-grow: 1;
+}
+
+.score-name {
+  font-weight: bold;
+  color: var(--chinese-black);
+}
+
+.score-value {
+  color: var(--chinese-red);
+  font-weight: bold;
+}
+
+.score-date {
+  color: #666;
+  font-size: 0.9rem;
 }
 
 .explanation-section {
@@ -579,7 +659,7 @@ button:hover {
 }
 
 .explanation::before {
-  content: """;
+  content: "'";
   position: absolute;
   top: -0.5rem;
   left: 1rem;
@@ -591,7 +671,7 @@ button:hover {
 }
 
 .explanation::after {
-  content: """;
+  content: "'";
   position: absolute;
   bottom: -2rem;
   right: 1rem;
@@ -700,7 +780,7 @@ button:hover {
 }
 
 .explanation-title::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -728,7 +808,7 @@ button:hover {
 }
 
 .fun-fact::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -767,4 +847,45 @@ button:hover {
   font-style: italic;
   position: relative;
   z-index: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-50%) rotate(10deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }

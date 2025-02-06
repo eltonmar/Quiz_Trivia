@@ -90,19 +90,26 @@ function App() {
           {highScores.length > 0 && (
             <div className="high-scores">
               <div className="high-scores-header">
-                <h2>High Scores</h2>
+                <h2>Hall of Fame</h2>
                 <button 
                   onClick={clearHighScores}
                   className="clear-scores-btn"
                   title="Clear all high scores"
                 >
-                  Clear High Scores
+                  Clear Scores
                 </button>
               </div>
               <ul>
                 {highScores.map((score, index) => (
                   <li key={index}>
-                    {score.name}: {score.score} points ({score.date})
+                    <div className="score-info">
+                      <span className="score-rank">{index + 1}</span>
+                      <div className="score-details">
+                        <span className="score-name">{score.name}</span>
+                        <span className="score-value"> • {score.score} points</span>
+                        <div className="score-date">{score.date}</div>
+                      </div>
+                    </div>
                   </li>
                 ))}
               </ul>
