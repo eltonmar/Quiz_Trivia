@@ -1,0 +1,770 @@
+/**
+ * The root element of the application.
+ * 
+ * This element is the outermost container element for the entire application.
+ * It is used to center the content horizontally and to set a maximum width
+ * for the content.
+ */
+:root {
+  --chinese-red: #c41e3a;
+  --chinese-gold: #ffd700;
+  --chinese-black: #1c1c1c;
+  --paper-white: #f9f3e6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--chinese-red) 0%, #8b0000 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Decorative background elements */
+body::before,
+body::after {
+  content: "中";
+  position: fixed;
+  font-size: 40vh;
+  opacity: 0.03;
+  color: var(--chinese-gold);
+  font-family: "Ma Shan Zheng", cursive;
+  pointer-events: none;
+}
+
+body::before {
+  top: -10vh;
+  left: -10vw;
+  transform: rotate(-15deg);
+}
+
+body::after {
+  bottom: -10vh;
+  right: -10vw;
+  transform: rotate(15deg);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Dragon corners */
+#root::before,
+#root::after {
+  content: "龍";
+  position: fixed;
+  font-size: 15vh;
+  color: rgba(255, 215, 0, 0.1);
+  font-family: "Ma Shan Zheng", cursive;
+  pointer-events: none;
+}
+
+#root::before {
+  top: 20px;
+  left: 20px;
+}
+
+#root::after {
+  bottom: 20px;
+  right: 20px;
+  transform: rotate(180deg);
+}
+
+.app {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
+              0 0 100px rgba(255, 215, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  border: 2px solid var(--chinese-gold);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1s ease-out;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app::before,
+.app::after {
+  content: "福";
+  position: absolute;
+  color: var(--chinese-red);
+  font-size: 2.5rem;
+  background: var(--paper-white);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--chinese-gold);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app::before {
+  top: -25px;
+  left: -25px;
+}
+
+.app::after {
+  bottom: -25px;
+  right: -25px;
+}
+
+h1 {
+  color: var(--chinese-red);
+  margin: 0 auto 2.5rem;
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+               0 0 20px rgba(196, 30, 58, 0.2);
+  position: relative;
+  display: inline-block;
+  padding: 0 4rem;
+  text-align: center;
+  width: 100%;
+}
+
+h1::before,
+h1::after {
+  content: "🏮";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  animation: swing 3s ease-in-out infinite;
+}
+
+h1::before {
+  left: 0;
+  animation-delay: 0.2s;
+}
+
+h1::after {
+  right: 0;
+}
+
+@keyframes swing {
+  0%, 100% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-50%) rotate(10deg);
+  }
+}
+
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input {
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  border: 2px solid var(--chinese-red);
+  border-radius: 30px;
+  width: 300px;
+  background-color: var(--paper-white);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--chinese-gold);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+button {
+  background: linear-gradient(135deg, var(--chinese-red) 0%, #8b0000 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.question-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.question-count {
+  font-size: 1.3rem;
+  color: var(--chinese-black);
+  background: linear-gradient(135deg, var(--paper-white) 0%, #fff 100%);
+  padding: 1rem;
+  border-radius: 15px;
+  border: 2px solid var(--chinese-red);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.question-text {
+  font-size: 1.8rem;
+  color: var(--chinese-black);
+  margin: 1.5rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--paper-white) 0%, #fff 100%);
+  border-radius: 20px;
+  border: 2px solid rgba(196, 30, 58, 0.3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.answer-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.answer-button {
+  background: linear-gradient(135deg, #fff 0%, var(--paper-white) 100%);
+  color: var(--chinese-red);
+  border: 2px solid var(--chinese-red);
+  padding: 1.2rem;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.answer-button:hover {
+  background: linear-gradient(135deg, var(--chinese-red) 0%, #8b0000 100%);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.current-score {
+  font-size: 1.4rem;
+  color: var(--chinese-red);
+  font-weight: bold;
+  background: linear-gradient(135deg, var(--paper-white) 0%, #fff 100%);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  border: 2px solid var(--chinese-gold);
+  display: inline-block;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bonus-indicator {
+  background: linear-gradient(135deg, var(--chinese-gold) 0%, #ffc800 100%);
+  color: var(--chinese-black);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  margin-left: 1rem;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+  border: 2px solid var(--chinese-red);
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+}
+
+.bonus-question {
+  color: var(--chinese-red);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  border: 3px solid var(--chinese-gold);
+  background: linear-gradient(135deg, #fff 0%, #fff8e7 100%);
+}
+
+.bonus-button {
+  border: 2px solid var(--chinese-gold) !important;
+  background: linear-gradient(135deg, #fff 0%, #fff8e7 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.bonus-button:hover {
+  background: linear-gradient(135deg, var(--chinese-red) 0%, #8b0000 100%) !important;
+  border-color: var(--chinese-gold) !important;
+  color: var(--chinese-gold) !important;
+}
+
+.score-section {
+  text-align: center;
+  background-color: var(--paper-white);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 2px solid var(--chinese-red);
+}
+
+.high-scores {
+  margin-top: 2rem;
+  text-align: left;
+  width: 100%;
+  max-width: 500px;
+  background-color: var(--paper-white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--chinese-red);
+}
+
+.high-scores-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--chinese-red);
+  padding-bottom: 0.5rem;
+}
+
+.high-scores h2 {
+  color: var(--chinese-red);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.clear-scores-btn {
+  background-color: #dc3545;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+.clear-scores-btn:hover {
+  background-color: #bb2d3b;
+}
+
+.high-scores ul {
+  list-style: none;
+  padding: 0;
+}
+
+.high-scores li {
+  padding: 0.8rem;
+  border-bottom: 1px solid rgba(196, 30, 58, 0.2);
+  color: var(--chinese-black);
+  background-color: white;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+.explanation-section {
+  background: linear-gradient(135deg, #fff 0%, var(--paper-white) 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  border: 2px solid var(--chinese-gold);
+  position: relative;
+  animation: slideIn 0.5s ease-out;
+  overflow: hidden;
+}
+
+.explanation-section::before,
+.explanation-section::after {
+  content: "知";  /* Chinese character for "knowledge" */
+  position: absolute;
+  font-family: "Ma Shan Zheng", cursive;
+  color: rgba(196, 30, 58, 0.05);
+  font-size: 8rem;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.explanation-section::before {
+  top: -2rem;
+  left: -2rem;
+  transform: rotate(-15deg);
+}
+
+.explanation-section::after {
+  bottom: -2rem;
+  right: -2rem;
+  transform: rotate(15deg);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.answer-result {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  padding: 1.2rem;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.answer-result.correct {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  border: 2px solid #c3e6cb;
+}
+
+.answer-result.incorrect {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  color: #721c24;
+  border: 2px solid #f5c6cb;
+}
+
+.answer-result::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.correct-answer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--chinese-red);
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #fff 0%, var(--paper-white) 100%);
+  border-radius: 12px;
+  border-left: 4px solid var(--chinese-gold);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.correct-answer::before {
+  content: "✓";
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--chinese-gold);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.explanation {
+  color: var(--chinese-black);
+  line-height: 1.8;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+  border: 1px solid rgba(196, 30, 58, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.explanation::before {
+  content: """;
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 4rem;
+  color: var(--chinese-red);
+  opacity: 0.1;
+  line-height: 1;
+}
+
+.explanation::after {
+  content: """;
+  position: absolute;
+  bottom: -2rem;
+  right: 1rem;
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 4rem;
+  color: var(--chinese-red);
+  opacity: 0.1;
+  line-height: 1;
+}
+
+.next-button {
+  background: linear-gradient(135deg, var(--chinese-red) 0%, #8b0000 100%);
+  color: white;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  margin: 2rem auto 0;
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
+}
+
+.next-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  border-color: var(--chinese-gold);
+}
+
+.next-button::after {
+  content: "→";
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.next-button:hover::after {
+  transform: translateX(5px);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.answer-label {
+  color: #666;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 0.5rem;
+}
+
+.explanation-title {
+  color: var(--chinese-red);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-family: "Ma Shan Zheng", cursive;
+  position: relative;
+  display: inline-block;
+}
+
+.explanation-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--chinese-red), transparent);
+}
+
+.explanation-text {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.fun-fact {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.fun-fact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.fun-fact-icon {
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.fun-fact-text {
+  color: var(--chinese-black);
+  font-size: 0.95rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
